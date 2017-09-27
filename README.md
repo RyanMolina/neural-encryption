@@ -9,7 +9,7 @@ I trained the network to swap the least significant bit and most significant bit
 
 #### With Diffusion
 So, I added the Fisher-Yates shuffling algorithm to diffuse the image.
-[With Fisher-Yates algorithm](https://user-images.githubusercontent.com/11855694/30923669-17f330f8-a3df-11e7-9a69-b6d034f2bf58.png)
+![With Fisher-Yates algorithm](https://user-images.githubusercontent.com/11855694/30923669-17f330f8-a3df-11e7-9a69-b6d034f2bf58.png)
 
 #### Dependencies
 * Python 3.5
