@@ -1,0 +1,61 @@
+#delete-image {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 9999
+}
+
+.file {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:9999
+}
+
+.is-relative {
+  position: relative !important;
+}
+
+
+.blur{
+  opacity: 0.5;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #ffdd57;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  animation: spin 2s ease infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#download-file-btn,
+#enc-dec-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999
+}
+
+figure {
+  border: 1px solid #ffdd57;
+  background-color: whitesmoke;
+}
+
+
+.img-placeholder{
+  min-height: 512px;
+}
