@@ -35,15 +35,19 @@ def enc_dec_process(file, process, key):
     file.save(secure_filename(file.filename))
     processed = restore_model.process(file, frozen_model, process, key)
     os.remove(file.filename)
-    return jsonify("data:image/" 
-                   + os.path.splitext(file.filename)[1]
+    return jsonify({"output_image": "data:image/" 
+                   + (os.path.splitext(file.filename)[1])[1:]
                    + ";base64," 
-                   + str(base64.b64encode(processed))[2:-1])
+                   + str(base64.b64encode(processed))[2:-1], 
+                   "output_filename": file.filename})
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--frozen_model_filename', default="./frozen_model.pb", type=str, help="Frozen model filename")
+    parser.add_argument('--frozen_model_filename', 
+                        default="./frozen_model.pb", 
+                        type=str, 
+                        help="Frozen model filename")
     args = parser.parse_args()
     frozen_model = args.frozen_model_filename
     app.run(debug=True, use_reloader=True)
