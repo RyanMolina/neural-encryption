@@ -25,9 +25,9 @@ def decrypt():
     file, key = get_data(request, 'input_image', 'encryption_key')
     return enc_dec_process(file, "decrypt", key)
 
-def get_data(request, filename, fieldname):
+def get_data(request, filename, cryptkey):
     file = request.files[filename]
-    key = request.form[fieldname]
+    key = request.form[cryptkey]
     return file, key
 
 
